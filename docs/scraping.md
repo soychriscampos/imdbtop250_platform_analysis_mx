@@ -21,7 +21,7 @@
 
 ## JustWatch (Búsqueda de la Película)
 
-**Fuente: ** `https://www.justwatch.com/mx/buscar?q={movie_title}`
+**Fuente:** `https://www.justwatch.com/mx/buscar?q={movie_title}`
 
 **Scrapping en la página de búsqueda**
 - `<div class="title-list-row__row>"` -> Contenedor principal de cada resultado de búsqueda.
@@ -30,7 +30,6 @@
   - `<a class="title-list-row__column-header">` -> Contiene el enlace a la página de la película.
   - `<span class="header-year>"` -> Año de la película para validar coincidencia con IMDb.
 
----
 ## JustWatch (Perfil de la película - Plataformas)
 **Fuente:** Perfil individual de la película (ejemplo: `https://www.justwatch.com/mx/pelicula/cadena-perpetua`)
 
@@ -39,7 +38,6 @@
 - `<article>` -> Contiene el párrafor principal con la descripción de disponibilidad.
 - `<p>` -> Texto tipo: Actualmente, usted es capaz de ver "X película" streaming en Netflix, Disney+, HBO Max.
 
----
 
 **Lógica aplicada:**
 - Se extrae la cadena entre **"streaming en"** y el primer punto **"."**.
