@@ -1,0 +1,9 @@
+# Ignorar archivos de referencia
+ETL.ipynb
+etl-draft.py
+
+# Ignorar archivos de sistema o entorno virtual
+__pycache__/
+*.pyc
+.env
+.vscode/
