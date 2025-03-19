@@ -23,7 +23,7 @@ La información fue obtenida a través de **Web Scraping** desde IMDb y JustWatc
 Este proyecto sigue un proceso de **Extracción, Transformación y Carga (ETL)**:
 ![Diagrama del ETL](assets/etl-diagram.png)
 
----
+
 ## Consideraciones Generales
 - Se excluyen películas que sólo están disponibles para **compra/renta**
 - Sólo se consideran plataformas con **suscripciones estándard**
@@ -36,7 +36,6 @@ El objetivo es determinar en qué plataformas de streaming estándard (Netflix, 
 El detalle completo del scraping de IMDb y JustWatch, incluyendo las clases, etiquetas y lógica aplicada, se en el archivo:
 [`/docs/scraping.md`](docs/scraping.md)
 
----
 
 ## Instalación y ejecución
 **1. Clona este repositorio**
@@ -59,7 +58,6 @@ python etl_pipeline.py
 streamlit run dashboard.py
 ```
 
----
 ## Contacto
 **Autor:** [Christian Campos](https://x.com/soychriscampos)  
 **Repositorio:** [Github](https://github.com/soychriscampos/imdbtop250_platform_analysis_mx.git)
