@@ -90,7 +90,7 @@ st.dataframe(filter_df, hide_index=True)
 # Platform summary
 st.subheader("Resumen de la Plataforma")
 # Movies / platform
-st.markdown(f"Se encontraron **{filter_df.shape[0]}** películas en **{plataform}**")
+st.markdown(f"Se encontraron **{filter_df.shape[0]}/250** películas en **{plataform}**")
 
 # Top Genres
 genres = filter_df["Género"].str.split(", ").explode()
