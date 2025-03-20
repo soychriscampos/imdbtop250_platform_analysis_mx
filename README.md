@@ -1,4 +1,4 @@
-# Top 250 IMDb: ¿En Qué Plataformas de Streaming Están Disponibles en México?
+# Análisis: ¿En qué plataformas de streaming están disponibles las 250 mejores películas de IMDb en México?
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
@@ -18,6 +18,7 @@ La información fue obtenida a través de **Web Scraping** desde IMDb y JustWatc
 
 ## Vista Previa del Dashboard
 ![Dashboard en Streamlit](assets/general-dashboard.png)
+![Ver Dashboard](https://imdbtop250platformanalysismx.streamlit.app/)
 
 ## Proceso ETL
 Este proyecto sigue un proceso de **Extracción, Transformación y Carga (ETL)**:
