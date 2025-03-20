@@ -47,10 +47,6 @@ else:
 # chart order
 top_platforms = top_platforms.sort_values(ascending=False)
 
-# theme detector
-theme = st.get_option("theme.base")
-text_color = "white" if theme == "dark" else "black"
-
 fig, ax = plt.subplots(figsize=(8,6))
 fig.patch.set_alpha(0)
 ax.set_facecolor("none")
@@ -63,7 +59,7 @@ top_platforms.plot(kind="pie",
                    startangle=140, 
                    ax=ax,
                    colors=colors,
-                  textprops={'color': text_color}
+                  textprops={'color': black}
 )
 ax.set_ylabel("")
 st.pyplot(fig)
