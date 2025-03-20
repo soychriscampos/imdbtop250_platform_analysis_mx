@@ -13,8 +13,8 @@ df["Plataforma"] = df["Plataforma"].str.split(", ")
 df = df.explode("Plataforma").reset_index(drop=True)
 
 # st.title("Análisis sobre el Top 250 de IMDb en Plataformas de Streaming en México")
-# st.title("Análisis sobre las mejores 250 películas de IMDb en Plataformas de Streaming en México")
-st.title("Análisis: ¿En qué plataformas de streaming están disponibles las 250 mejores películas de IMDb en México?")
+st.title("¿Dónde ver las 250 mejores películas de IMDb en el streaming de México?")
+# st.title("Análisis: ¿En qué plataformas de streaming están disponibles las 250 mejores películas de IMDb en México?")
 st.markdown(f"""Actualización: 19 de marzo de 2025  
 Por: [Christian Campos](https://x.com/soychriscampos)""")
 st.markdown("---")
