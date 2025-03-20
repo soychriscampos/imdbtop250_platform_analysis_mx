@@ -48,11 +48,8 @@ else:
 top_platforms = top_platforms.sort_values(ascending=False)
 
 fig, ax = plt.subplots(figsize=(8,6))
-fig.patch.set_alpha(0)
-ax.set_facecolor("none")
-
-fig.patch.set_facecolor("white")
-ax.set_facecolor("white")
+# fig.patch.set_alpha(0)
+# ax.set_facecolor("none")
 
 # colors
 colors = sns.color_palette("Blues", len(top_platforms))
