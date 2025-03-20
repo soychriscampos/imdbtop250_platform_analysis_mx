@@ -1,4 +1,5 @@
-# Análisis: ¿En qué plataformas de streaming están disponibles las 250 mejores películas de IMDb en México?
+# Análisis: ¿Dónde están las 250 mejores películas de IMDb en el Streaming de México?
+### Estudio de disponibilidad en plataformas de streaming con suscripción estándar (Netflix, Max, Prime Video y más) basado en datos de IMDb y JustWatch.
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
