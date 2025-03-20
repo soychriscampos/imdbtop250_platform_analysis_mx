@@ -108,7 +108,7 @@ def get_platform(movie_title, movie_year, headers):
 
             platforms_text = text[start:end].strip()
             platforms_text = platforms_text.replace("o forma gratuita con anuncios en", ",")
-            platforms_list = [p.strip() for p in platforms_text.split(",") if "Channel" not in p and "Ads" not in p and "Premium" not in p and "gratuita" not in p and "Nuestro Cine" not in p and "Amazon Video" not in p and "Microsoft Store" not in p]
+            platforms_list = [p.strip() for p in platforms_text.split(",") if "Channel" not in p and "Ads" not in p and "Premium" not in p and "gratuita" not in p and "Nuestro Cine" not in p and "Amazon Video" not in p and "Microsoft Store" not in p and "channel" not in p]
             return ", ".join(platforms_list) if platforms_list else "Ninguna Plataforma"
     return "Ninguna Plataforma"
 
