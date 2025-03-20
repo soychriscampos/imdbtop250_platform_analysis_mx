@@ -51,6 +51,9 @@ fig, ax = plt.subplots(figsize=(8,6))
 fig.patch.set_alpha(0)
 ax.set_facecolor("none")
 
+fig.patch.set_facecolor("white")
+ax.set_facecolor("white")
+
 # colors
 colors = sns.color_palette("Blues", len(top_platforms))
 colors = [(r*0.8, g*0.8, b*0.9) for r, g, b in colors[::-1]]
