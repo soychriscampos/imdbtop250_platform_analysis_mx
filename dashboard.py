@@ -59,7 +59,7 @@ top_platforms.plot(kind="pie",
                    startangle=140, 
                    ax=ax,
                    colors=colors,
-                  textprops={'color': black}
+                  textprops={'color': "black"}
 )
 ax.set_ylabel("")
 st.pyplot(fig)
