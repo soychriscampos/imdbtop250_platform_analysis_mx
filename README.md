@@ -18,7 +18,7 @@ La información fue obtenida a través de **Web Scraping** desde IMDb y JustWatc
 
 ## Vista Previa del Dashboard
 ![Dashboard en Streamlit](assets/general-dashboard.png)
-![Ver Dashboard](https://imdbtop250platformanalysismx.streamlit.app/)
+[Haz clic aquí para ver el Dashboard en Streamlit Cloud](https://imdbtop250platformanalysismx.streamlit.app/)
 
 ## Proceso ETL
 Este proyecto sigue un proceso de **Extracción, Transformación y Carga (ETL)**:
