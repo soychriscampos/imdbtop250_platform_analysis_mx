@@ -31,7 +31,7 @@ Este estudio analiza en qué plataformas de streaming en México con suscripció
 """)
 st.markdown("---")
 
-# Cake-chart
+# General:
 st.subheader("Panorama General:")
 st.markdown("¿Dónde se encuentran las películas?")
 platform_counts = df["Plataforma"].value_counts()
@@ -47,6 +47,10 @@ else:
 # chart order
 top_platforms = top_platforms.sort_values(ascending=False)
 
+# theme detector
+theme = st.get_option("theme.base")
+text_color = "white" if theme == "dark" else "black"
+
 fig, ax = plt.subplots(figsize=(8,6))
 fig.patch.set_alpha(0)
 ax.set_facecolor("none")
@@ -54,9 +58,13 @@ ax.set_facecolor("none")
 # colors
 colors = sns.color_palette("Blues", len(top_platforms))
 colors = [(r*0.8, g*0.8, b*0.9) for r, g, b in colors[::-1]]
-top_platforms.plot(kind="pie", autopct=lambda p: f'{p:.1f}%', startangle=140, ax=ax,
+top_platforms.plot(kind="pie", 
+                   autopct=lambda p: f'{p:.1f}%', 
+                   startangle=140, 
+                   ax=ax,
                    colors=colors,
-                  textprops={'color': "white"})
+                  textprops={'color': text_color}
+)
 ax.set_ylabel("")
 st.pyplot(fig)
 
