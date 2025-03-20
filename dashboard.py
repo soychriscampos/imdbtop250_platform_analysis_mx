@@ -5,19 +5,17 @@ import seaborn as sns
 
 df = pd.read_csv("data/imdb_top250.csv")
 
+# Position in ranking
+df["Pos IMDb"] = df.index + 1
+
 # Separing platforms
 df["Plataforma"] = df["Plataforma"].str.split(", ")
 df = df.explode("Plataforma").reset_index(drop=True)
 
-# Position in ranking
-df = df.reset_index()
-df.rename(columns={"index": "Pos IMDb"}, inplace=True)
-df["Pos IMDb"] += 1
-
 # st.title("Análisis sobre el Top 250 de IMDb en Plataformas de Streaming en México")
 # st.title("Análisis sobre las mejores 250 películas de IMDb en Plataformas de Streaming en México")
 st.title("Análisis de Disponibilidad: ¿Dónde Ver las Mejores 250 Películas de IMDb en Plataformas de Streaming en México?")
-st.markdown("Actualización: 18 de marzo de 2025 | Por: [Christian Campos](https://x.com/soychriscampos)")
+st.markdown("Actualización: 19 de marzo de 2025 | Por: [Christian Campos](https://x.com/soychriscampos)")
 st.markdown("<hr>", unsafe_allow_html=True)
 
 st.markdown(f"""
@@ -70,7 +68,7 @@ plataform = st.selectbox("", df["Plataforma"].unique())
 filter_df = df[df["Plataforma"] == plataform][["Pos IMDb","Título Original", "Título Alternativo", "Año", "Calificación", "Duración (min)", "Género"]]
 
 
-st.dataframe(df, hide_index=True)
+st.dataframe(filter_df, hide_index=True)
 
 # Platform summary
 st.subheader("Resumen de la Plataforma")
