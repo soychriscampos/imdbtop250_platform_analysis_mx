@@ -14,23 +14,22 @@ df = df.explode("Plataforma").reset_index(drop=True)
 
 # st.title("Análisis sobre el Top 250 de IMDb en Plataformas de Streaming en México")
 # st.title("Análisis sobre las mejores 250 películas de IMDb en Plataformas de Streaming en México")
-st.title("Análisis de Disponibilidad: ¿Dónde Ver las Mejores 250 Películas de IMDb en Plataformas de Streaming en México?")
-st.markdown("Actualización: 19 de marzo de 2025 | Por: [Christian Campos](https://x.com/soychriscampos)")
-st.markdown("<hr>", unsafe_allow_html=True)
+st.title("Top 250 IMDb: ¿En Qué Plataformas de Streaming Están Disponibles en México?")
+st.markdown(f"""Actualización: 19 de marzo de 2025  
+Por: [Christian Campos](https://x.com/soychriscampos)""")
+st.markdown("---")
 
 st.markdown(f"""
 **📌 Sobre este análisis:**
-Este estudio analiza en qué plataformas de streaming en México están disponibles las películas del **Top 250 de IMDb**. 
+Este estudio analiza en qué plataformas de streaming en México con suscripción estándard están disponibles las películas del **Top 250 de IMDb**. 
 
 - Los datos fueron obtenidos de **IMDb** (Top 250) y **JustWatch** (plataformas de streaming).
 - **No se tomaron en cuenta** películas disponibles solo para **compra o renta** en plataformas digitales.
 - **No se incluyeron "Channels" dentro de plataformas** (ej. *HBO Max en Amazon Channel*).
 - Si una película **solo estaba disponible para compra/renta**, se consideró como **"Ninguna Plataforma"**.
 - Se consideraron únicamente **las suscripciones estándar de cada plataforma**.
-
-⚠️ **Dado que algunas plataformas realizan cambios constantes en sus catálogos de películas, algunos títulos podrían no encontrarse al momento de tu consulta, sugiero revises la fecha de actualización de la parte de arriba para una mejor orientación.**
 """)
-st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("---")
 
 # Cake-chart
 st.subheader("Panorama General:")
@@ -45,6 +44,9 @@ if len(platform_counts) > category_num:
 else:
     top_platforms = platforms_counts
 
+# chart order
+top_platforms = top_platforms.sort_values(ascending=False)
+
 fig, ax = plt.subplots(figsize=(8,6))
 fig.patch.set_alpha(0)
 ax.set_facecolor("none")
@@ -58,8 +60,15 @@ top_platforms.plot(kind="pie", autopct=lambda p: f'{p:.1f}%', startangle=140, ax
 ax.set_ylabel("")
 st.pyplot(fig)
 
+st.markdown(f"""
+📊 **Hallazgos destacados:**  
+- Sorprendentemente, **el 46.1%** de las películas del Top 250 de IMDb **no están disponibles** en ninguna plataforma de streaming en México con suscripción estándard, según los datos actuales de JustWatch.
+- **Max** lidera la oferta con el **13.6%** de las películas disponibles, seguido por **Amazon Prime Video** y **Disney Plus**.
+- La categoría **Otra** concentra un grupo de plataformas menores que suman **9.5%**, mientras que **Netflix**, aunque relevante, sólo ofrece el **8.8%** de las películas de este ranking.
+""")
 
-st.markdown("<hr>", unsafe_allow_html=True)
+
+st.markdown("---")
 # Platform Selection:
 st.subheader("Selecciona una plataforma:")
 plataform = st.selectbox("", df["Plataforma"].unique())
@@ -101,3 +110,6 @@ decades = filter_df["Década"].value_counts().sort_index()
 st.subheader(f"Distribución de Películas por Década en **{plataform}**.")
 st.markdown("Para saber en qué década se hicieron mas películas:")
 st.bar_chart(decades)
+st.markdown(f"""---  
+Disclaimer: Dado que algunas plataformas realizan cambios constantes en sus catálogos de películas, algunos títulos podrían no encontrarse al momento de tu consulta, sugiero revises la fecha de actualización de la parte de arriba para una mejor orientación.
+""")
